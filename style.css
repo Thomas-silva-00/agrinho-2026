@@ -1,0 +1,256 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    --primary-color: #2e7d32;       /* Verde escuro (Florestal/Agrícola) */
+    --secondary-color: #388e3c;     /* Verde médio para destaques */
+    --accent-color: #81c784;        /* Verde claro para bordas e detalhes */
+    --text-dark: #212121;           /* Grafite escuro para leitura confortável */
+    --text-light: #ffffff;          /* Branco para textos sobre fundos escuros */
+    --bg-light: #f4f6f4;            /* Cinza esverdeado bem claro para o fundo */
+    --card-bg: #ffffff;             /* Branco puro para os blocos de conteúdo */
+    --warning-bg: #fff3cd;          /* Amarelo claro para alertas */
+    --warning-border: #ffc107;      /* Borda do alerta */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   HEADER (TOPO DO SITE)
+   ========================================================================== */
+header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1625246333195-78d9c38ad451?auto=format&fit=crop&w=1200&q=80') 
+                no-repeat center center/cover;
+    color: var(--text-light);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   NAVIGATION (MENU DE NAVEGAÇÃO)
+   ========================================================================== */
+nav {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 18px 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+    color: #e8f5e9;
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL (MAIN E SECTIONS)
+   ========================================================================== */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: var(--card-bg);
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 12px;
+    font-size: 1.8rem;
+}
+
+h3 {
+    color: var(--secondary-color);
+    margin: 25px 0 15px 0;
+    font-size: 1.4rem;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+ul {
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   ELEMENTOS EM GRID (CARDS DE NUTRIENTES E TIPOS)
+   ========================================================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.card {
+    background-color: var(--bg-light);
+    padding: 25px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* ==========================================================================
+   TABELAS DE DADOS
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+table, th, td {
+    border: 1px solid #e0e0e0;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #fafdfa;
+}
+
+/* ==========================================================================
+   ALERTAS E DESTAQUES (CONCEITO 4R)
+   ========================================================================== */
+.alerta {
+    background-color: var(--warning-bg);
+    border-left: 5px solid var(--warning-border);
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 6px;
+}
+
+.alerta strong {
+    color: #b78103;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   FOOTER (RODAPÉ)
+   ========================================================================== */
+footer {
+    background-color: #1b5e20;
+    color: var(--text-light);
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 80px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 60px 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        text-align: center;
+        padding: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    section {
+        padding: 25px 15px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
